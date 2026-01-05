@@ -30,19 +30,15 @@ public class Predator extends Animal {
                     } else {
                         this.currentSatiety += foodGained;
                     }
-
-                    System.out.println(this.name + " з'їв " + victim.getClass().getSimpleName());
                     victim.die();
-                    iterator.remove();
+                    cell.removeAnimal(victim);
                     return;
                 }
             }
         }
-        System.out.println(this.name + " нікого не спіймав.");
     }
 
     @Override
     public void reproduce(Cell cell) {
-        System.out.println(name + " розмножується.");
     }
 }
