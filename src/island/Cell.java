@@ -5,6 +5,7 @@ import island.plants.Plant;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Cell {
     private final int row;
@@ -15,8 +16,8 @@ public class Cell {
     public Cell(int row, int column) {
         this.row = row;
         this.column = column;
-        animals = new ArrayList<>();
-        plants = new ArrayList<>();
+        animals = new CopyOnWriteArrayList<>();
+        plants = new CopyOnWriteArrayList<>();
     }
 
     public int getRow() {
