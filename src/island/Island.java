@@ -123,10 +123,35 @@ public class Island {
     }
 
     public void printStats() {
-        for(int i = 0; i < height; i++) {
-            for(int j = 0; j < width; j++) {
-                System.out.println("[" + cells[i][j].getAnimals().size() + "]");
+        System.out.println("\n--- СТАТИСТИКА ОСТРОВА ---");
+        System.out.println("Рослин: " + countPlants() + " | Тварин: " + countAnimals());
+
+        int rowsToShow = Math.min(height, 10);
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                int count = cells[i][j].getAnimals().size();
+                System.out.printf("| %-5d ",  count);
+            }
+            System.out.println("|");
+        }
+    }
+    private int countAnimals() {
+        int total = 0;
+        for (Cell[] row : cells) {
+            for (Cell cell : row) {
+                total += cell.getAnimals().size();
             }
         }
+        return total;
+    }
+
+    private int countPlants() {
+        int total = 0;
+        for (Cell[] row : cells) {
+            for (Cell cell : row) {
+                total += cell.getPlants().size();
+            }
+        }
+        return total;
     }
 }
