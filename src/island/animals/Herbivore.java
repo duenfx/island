@@ -1,6 +1,7 @@
 package island.animals;
 
 import island.Cell;
+import island.plants.Plant;
 
 public class Herbivore extends Animal {
     public Herbivore(String name, double weight, int speed, double foodNeeded, double currentSatiety) {
@@ -9,7 +10,18 @@ public class Herbivore extends Animal {
 
     @Override
     public void eat(Cell cell) {
-        System.out.println(name + " їсть рослини.");
+        var plants = cell.getPlants();
+        if (!plants.isEmpty() && currentSatiety < foodNeeded) {
+            Plant plant = plants.get(0);
+            plants.remove(plant);
+            currentSatiety += plant.getWeight();
+            if (currentSatiety > foodNeeded) {
+                currentSatiety = foodNeeded;
+            }
+            System.out.println(name + " з'їв рослину і тепер ситість: " + currentSatiety);
+        } else {
+            System.out.println(name + " не знайшов їжі або неголодний ще.");
+        }
     }
 
     @Override
