@@ -18,10 +18,18 @@ public abstract class Animal {
         this.currentSatiety = currentSatiety;
     }
 
+    public double getWeight() {
+        return weight;
+    }
+
     public abstract void eat(Cell cell);
 
     public abstract void reproduce(Cell cell);
 
     public abstract void move(Cell cell);
+
+    public void die() {
+        isAlive = false;
+    }
 
 }
