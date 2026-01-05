@@ -3,8 +3,8 @@ package island.animals;
 import island.Cell;
 
 public class Predator extends Animal {
-    public Predator(String name, int weight, int speed) {
-        super(name, weight, speed);
+    public Predator(String name, int weight, int speed, double foodNeeded, double currentSatiety) {
+        super(name, weight, speed, foodNeeded, currentSatiety);
     }
 
     @Override

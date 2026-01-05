@@ -3,8 +3,8 @@ package island.animals;
 import island.Cell;
 
 public class Herbivore extends Animal {
-    public Herbivore(String name, int weight, int speed) {
-        super(name, weight, speed);
+    public Herbivore(String name, int weight, int speed, double foodNeeded, double currentSatiety) {
+        super(name, weight, speed, foodNeeded, currentSatiety);
     }
 
     @Override
