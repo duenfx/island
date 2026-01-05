@@ -54,9 +54,4 @@ public class Herbivore extends Animal {
     public void reproduce(Cell cell) {
         System.out.println(name + " розмножується.");
     }
-
-    @Override
-    public void move(Cell cell) {
-        System.out.println(name + " пересувається");
-    }
 }
