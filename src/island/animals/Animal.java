@@ -11,7 +11,7 @@ public abstract class Animal {
     protected int speed;
     protected double foodNeeded;
     protected double currentSatiety;
-    protected boolean isAlive = true;
+    public boolean isAlive = true;
     protected int maxOnCell;
 
     public Animal(String name, double weight, int speed, double foodNeeded, double currentSatiety) {
@@ -54,9 +54,7 @@ public abstract class Animal {
             if (countSameSpecies < maxOnCell) {
                 currentCell.removeAnimal(this);
                 destination.addAnimal(this);
-                System.out.println(name + " перейшов з [" + currentY + "," + currentX + "] до [" + newY + "," + newX + "]");
             } else {
-                System.out.println(name + " хотів піти в [" + newY + "," + newX + "], але там немає місця.");
             }
         }
     }
