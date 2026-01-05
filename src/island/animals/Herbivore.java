@@ -21,7 +21,6 @@ public class Herbivore extends Animal {
             if (currentSatiety > foodNeeded) {
                 currentSatiety = foodNeeded;
             }
-            System.out.println(name + " з'їв рослину і тепер ситість: " + currentSatiety);
             return;
         }
         var animals = cell.getAnimals();
@@ -41,17 +40,14 @@ public class Herbivore extends Animal {
                     } else {
                         this.currentSatiety += foodGained;
                     }
-                    System.out.println(name + " з'їв " + victim.getClass().getSimpleName());
                     victim.die();
-                    iterator.remove();
+                    cell.removeAnimal(victim);
                     return;
                 }
             }
         }
-        System.out.println(name + " не знайшов їжі або неголодний ще.");
     }
     @Override
     public void reproduce(Cell cell) {
-        System.out.println(name + " розмножується.");
     }
 }
