@@ -4,13 +4,13 @@ import island.Cell;
 
 public abstract class Animal {
     protected String name;
-    protected int weight;
+    protected double weight;
     protected int speed;
     protected double foodNeeded;
     protected double currentSatiety;
     protected boolean isAlive = true;
 
-    public Animal(String name, int weight, int speed, double foodNeeded, double currentSatiety) {
+    public Animal(String name, double weight, int speed, double foodNeeded, double currentSatiety) {
         this.name = name;
         this.weight = weight;
         this.speed = speed;

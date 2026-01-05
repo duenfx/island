@@ -3,7 +3,7 @@ package island.animals;
 import island.Cell;
 
 public class Predator extends Animal {
-    public Predator(String name, int weight, int speed, double foodNeeded, double currentSatiety) {
+    public Predator(String name, double weight, int speed, double foodNeeded, double currentSatiety) {
         super(name, weight, speed, foodNeeded, currentSatiety);
     }
 
