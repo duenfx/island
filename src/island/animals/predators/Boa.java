@@ -5,5 +5,6 @@ import island.animals.Predator;
 public class Boa extends Predator {
     public Boa() {
         super("Boa", 15, 1, 3, 0);
+        this.maxOnCell = 30;
     }
 }
