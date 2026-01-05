@@ -121,4 +121,12 @@ public class Island {
     public int getHeight() {
         return height;
     }
+
+    public void printStats() {
+        for(int i = 0; i < height; i++) {
+            for(int j = 0; j < width; j++) {
+                System.out.println("[" + cells[i][j].getAnimals().size() + "]");
+            }
+        }
+    }
 }
