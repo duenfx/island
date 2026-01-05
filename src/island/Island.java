@@ -17,7 +17,7 @@ public class Island {
         cells = new Cell[height][width];
         for(int a = 0; a < height; a++) {
             for(int b = 0; b < width; b++) {
-                cells[a][b] = new Cell();
+                cells[a][b] = new Cell(a, b);
             }
         }
     }
